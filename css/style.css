@@ -7,7 +7,9 @@ html, body {
 }
 
 h1 {
-    margin : 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
     text-transform : uppercase;
     font-size : 100px;
     letter-spacing: 15px;
@@ -31,7 +33,7 @@ h2 {
     );
 }
 
-.container::after {
+.container:after {
     content:"";
     display: block;
     min-height: 100vh;
@@ -49,19 +51,40 @@ h2 {
     mix-blend-mode : screen;
 }
 
+.soleil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+}
+.soleil p {
+    margin-top: 20px;
+    font-size : 20px;
+}
+
 button {
+    margin-top: 60px;
     font-size: 50px;
-    padding: 10px 15px 10px 15px;
+    padding: 20px 13px;
+    padding-bottom: 10px;
     font-weight: bold;
     background-color: #FFB703;
-    border-radius: 50px;
+    border-radius: 100px;
     cursor: pointer;
     font-family: 'Indie Flower', 'Arial';
+    transform: scale(1);
+    transition: transform 80ms;
+}
+
+button:hover {
+    transform: scale(1.15);
 }
 
 .go {
     margin: 0;
-    padding: 5px 0 0 0;
+    padding: 10px;
 }
 
 #entireQuote, #authorName {

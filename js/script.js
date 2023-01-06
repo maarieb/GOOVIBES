@@ -7,16 +7,6 @@ var xhr = new XMLHttpRequest();
 //créer la fonction + la méthode aléatoire
 button.addEventListener("click", changeQuote);
 
-// function changeQuote() {
-//   //choix aléatoire
-//   let rdm = Math.floor(Math.random() * (allQuotes.length - 0));
-//   let rdmQuotes = allQuotes[rdm];
-//   console.log(rdmQuotes);
-//   // modification à faire
-//   author.innerHTML = rdmQuotes["nom"];
-//   quote.innerHTML = rdmQuotes["citation"];
-// }
-
 //essai AJAX
 function changeQuote() {
   xhr.onreadystatechange = function () {
@@ -31,7 +21,7 @@ function changeQuote() {
     }
   };
 
-  xhr.open("GET", "/citations.json", true);
+  xhr.open("GET", "./data/citations.json", true);
   xhr.responseType = "json";
   xhr.send();
 }
